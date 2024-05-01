@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archie's Restaurant</title>
+</head>
+<body background="images/black.jpg">
+<div style="text-align: center;">
+    <div style="float: left;">
+        <a href="index.html" style="text-decoration: none;">
+            <button style="width: 100px; height: 30px; background-color: white(255, 255, 255); color: black; border: none;">Back</button>
+        </a>
+    </div>
+</div>
+
+<center>
+    <h1>Here's our menu</h1>
+</center>
+<div style="display: flex; justify-content: space-between;">
+<div style="display: flex; align-items: center; text-align: center;">
+    <img src="images/d1.jpg" width="400" style="margin-right: 10px;">
+    <div>
+        <p style="margin-bottom: 5px; color: white;">₱1199 - Fantasy Steak</p>
+                <button onclick="addorder('Fantasy Steak - ₱1199.00')" style="width: 90px; height: 20px; background-color: Red; color: white; border: none;">Order</button>
+    </div>
+</div>
+<div style="display: flex; align-items: center; text-align: center;">
+    <div>
+        <p style="margin-bottom: 5px; color: white;">₱699 - Fried Siken </p>
+        <button onclick="addorder('Fried Siken - ₱699.00')" style="width: 90px; height: 20px; background-color: Red; color: white; border: none;">Order</button>
+    </div>
+    <img src="images/d4.jpeg" width="400" style="margin-left: 10px;">
+</div>
+</div>
+<br>
+<div style="display: flex; justify-content: space-between;">
+<div style="display: flex; align-items: center; text-align: center;">
+    <img src="images/d2.png" width="400" style="margin-right: 10px;">
+    <div>
+        <p style="margin-bottom: 5px; color: white;">₱899 - Delicious Lasagna </p>
+        <button onclick="addorder('Delicious Lasagna - ₱899.00')"style="width: 90px; height: 20px; background-color: Red; color: white; border: none;">Order</button>
+    </div>
+</div>
+<div style="display: flex; align-items: center; text-align: center;">
+    <div>
+        <p style="margin-bottom: 5px; color: white;">₱1099 - Seafood Special </p>
+        <button onclick="addorder('Seafood Special - ₱1099.00')"style="width: 90px; height: 20px; background-color: Red; color: white; border: none;">Order</button>
+    </div>
+    <img src="images/d4.webp" width="400" style="margin-left: 10px;">
+</div>
+</div>
+<br>
+<div style="display: flex; justify-content: space-between;">
+    <div style="display: flex; align-items: center; text-align: center;">
+        <img src="images/d3.jpg" width="400" style="margin-right: 10px;">
+        <div>
+            <p style="margin-bottom: 5px; color: white;">₱579 - Tacos Overload </p>
+            <button onclick="addorder('Tacos Overload - ₱579.00')"style="width: 90px; height: 20px; background-color: Red; color: white; border: none;">Order</button>
+        </div>
+    </div>
+    <div style="display: flex; align-items: center; text-align: center;">
+        <div>
+            <p style="margin-bottom: 5px; color: white;">₱499 - Lumpia Overload </p>
+            <button onclick="addorder('Lumpia Overload - ₱499.00')"style="width: 90px; height: 20px; background-color: Red; color: white; border: none;">Order</button>
+        </div>
+        <img src="images/d5.jpeg" width="400" style="margin-left: 10px;">
+    </div>
+</div>
+<br>
+<br>
+<div style="text-align: center;">
+    <p>Orders:</p>
+    <textarea id="list" rows="10" cols="50"></textarea>
+</div>
+<div style="text-align: center;">
+    <button onclick="remove()"style="width: 90px; height: 20px; background-color: Red; color: white; border: none;">Remove</button>
+    </div>
+<script>
+    var orders = [];
+
+    function addorder(item) {
+        orders.push(item);
+        var orderList = document.getElementById("list");
+        orderList.value = orders.join("\n");
+    }
+    function remove() {
+            if (orders.length > 0) {
+                orders.pop(); // Remove the last item from the array
+                var orderList = document.getElementById("list");
+                orderList.value = orders.join("\n");
+            }
+        }
+</script>
+
+<center><div id="payment-model" style="color: white;">
+    <h2>Select Payment Method:</h2>
+    <label><input type="radio" name="payment" value="credit"> Credit Card</label><br>
+    <label><input type="radio" name="payment" value="debit"> Debit Card</label><br>
+    <label><input type="radio" name="payment" value="cash"> Cash</label><br>
+</div>
+<br>
+<div id="order-type"style="color: white;">
+    <label><input type="radio" name="order-buttons" value="Dine-In"> Dine-in</label><br>
+    <label><input type="radio" name="order-buttons" value="Take-Out"> Take-out</label><br>
+</div>
+
+<div id="order-buttons">
+    <a href="placeorder.html"><button style="width: 100px; height: 35px; background-color:black; color: white;">Place Order</button></a>
+    <a href="cancel.html"><button style="width: 100px; height: 35px; background-color:black; color: red;">Cancel</button></a>
+</div>
+</center>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+    
+
+
+</body>
+</html>
